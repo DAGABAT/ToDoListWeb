@@ -1,4 +1,4 @@
-const checkComplete = () => {
+export const checkComplete = () => {
   const i = document.createElement('i');
   i.classList.add('far', 'fa-check-square', 'icon');
   i.addEventListener('click', completeTask);
@@ -11,5 +11,3 @@ const completeTask = (event) => {
   element.classList.toggle('completeIcon');
   element.classList.toggle('far');
 };
-
-export default checkComplete;
