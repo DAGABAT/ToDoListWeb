@@ -1,5 +1,6 @@
 import { checkComplete } from './checkComplete.js';
 import { deleteIcon } from './deleteIcon.js';
+import { readTasks } from './readTasks.js';
 
 export const addTask = (evento) => {
   //Desactivando el default
@@ -12,6 +13,11 @@ export const addTask = (evento) => {
   const value = input.value;
   const date = calendar.value;
   const dateFormat = moment(date).format('DD/MM/YYYY');
+
+      if (value == '' ||  date == '' ){
+            return
+      }
+
   //Limpiando los formularios
   input.value = '';
   calendar.value = '';
@@ -20,6 +26,10 @@ export const addTask = (evento) => {
     value,
     dateFormat
   }
+
+  //vaciando el contenido de la variable list
+  list.innerHTML = '';
+
   //Creo constante para recuperar lo guardado en memoria
   const taskList = JSON.parse(localStorage.getItem('task')) || [];
   //Adiciono a la constante creada los elementos del objeto
@@ -28,10 +38,7 @@ export const addTask = (evento) => {
   //Convirtiendo en string el objeto y subiendolo a la memoria local
   localStorage.setItem('task', JSON.stringify(taskList));
 
-
-  //Llamando la funcion createTask
-  const task = createTask(taskObj);
-  list.appendChild(task);
+  readTasks();
 }
 
 
