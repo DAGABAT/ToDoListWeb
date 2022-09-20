@@ -1,5 +1,5 @@
 import { createTask } from "./addTask.js";
-import { uniqueDates } from "../services/date.js";
+import { uniqueDates, orderDates } from "../services/date.js";
 import dateElement from "./dateElement.js";
 
 //Funcion para leer la informacion guardada en la memoria
@@ -16,6 +16,11 @@ export const readTasks = () => {
     //Evaluando la funcion unique Dates
     const dates = uniqueDates(taskList);
     //console.log(taskList);
+
+    //Ordenando las fechas
+    orderDates(dates);
+    
+
 
     //Mostrando el log de dates
     //console.log(dates);
