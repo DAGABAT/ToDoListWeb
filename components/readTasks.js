@@ -18,9 +18,7 @@ export const readTasks = () => {
     //console.log(taskList);
 
     //Ordenando las fechas
-    orderDates(dates);
-    
-
+    orderDates(dates);  
 
     //Mostrando el log de dates
     //console.log(dates);
@@ -28,7 +26,6 @@ export const readTasks = () => {
     //recorriendo el arreglo uniques
     dates.forEach((date) => {
         //console.log(date);
-
         //Creando objeto para fecha formateada de date
         const dateMoment = moment(date, "DD/MM/YYYY");
         //console.log(dateMoment);
@@ -49,9 +46,7 @@ export const readTasks = () => {
             if (diff == 0) {
                  //Adicionando a la lista de tareas en la pagina
             list.appendChild(createTask(task));
-            }
-
-           
+            }          
         })
     });
 

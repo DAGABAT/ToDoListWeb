@@ -56,13 +56,11 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
 
       const taskContent = document.createElement('div');
 
-      console.log(complete);
 
       const check = checkComplete(id);
 
       //Condicional para evaluar complete
       if(complete){
-            console.log('completada');
             check.classList.toggle('fas');
             check.classList.toggle('completeIcon');
             check.classList.toggle('far');
@@ -81,6 +79,6 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
       task.appendChild(taskContent);
       //Vinculando el nuevo span a lista hija
       task.appendChild(dateElement);
-      task.appendChild(deleteIcon());
+      task.appendChild(deleteIcon(id));
       return task;
 };
