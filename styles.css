@@ -130,3 +130,9 @@ form {
   width: 100%;
   padding: 15px;
 }
+
+.rodapie-desarrollador {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
